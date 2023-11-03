@@ -1,3 +1,16 @@
+/*********************************************************************************
+*  WEB422 – Assignment 4
+*  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Angelo Ivan Mejia Student ID: 115777211 Date: 11/03/23
+*  GitHub Repo: https://github.com/CoyAri/web422-a4
+*  Netlify Link: https://helpful-beijinho-20cd88.netlify.app/
+*
+********************************************************************************/ 
+
+
 import React from "react";
 import { Container, Image, Row, Col } from "react-bootstrap";
 
