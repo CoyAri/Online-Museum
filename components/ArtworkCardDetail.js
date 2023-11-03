@@ -17,7 +17,7 @@ export default function ArtworkCardDetail({objectID}) {
     else {
         return (
             <>
-                <Card>
+                <Card style={{ width: '40rem' }}>
                     {data.primaryImage ?
                         <Card.Img variant="top" src={data.primaryImageSmall} /> :
                         <Card.Img variant="top" src="https://via.placeholder.com/375x375.png?text=[+Not+Available+]" />}
