@@ -47,7 +47,7 @@ export default function ArtWork() {
     return (
         <>
             <Container>
-                <Row className="">
+                <Row className="gy-4">
                     {artworkList.length > 0 && artworkList[page - 1].map((currentObjectID) => (
                         <Col lg={3} key={currentObjectID}>
                             <ArtworkCard objectID={currentObjectID} />
@@ -62,9 +62,10 @@ export default function ArtWork() {
                         </Card>
                     }
                 </Row>
+                <br/>
                 {artworkList.length > 0 && 
                     <Row>
-                        <Col>
+                        <Col className="d-flex justify-content-center">
                             <Pagination>
                                 <Pagination.Prev onClick={previousPage}/>
                                 <Pagination.Item>{page}</Pagination.Item>

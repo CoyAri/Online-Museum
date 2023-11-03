@@ -7,11 +7,10 @@ import Link from "next/link"
 export default function ArtworkCard({ objectID }) {
     const { data, error } = useSWR(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`)
 
-    if (error) {
+    if (error && error.response) {
         return <Error statusCode={404} />
     }
     else if (!data) {
-        console.log("The SWR request didn't return anything.")
         return null
     }
     else {
