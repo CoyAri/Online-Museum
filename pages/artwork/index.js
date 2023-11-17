@@ -1,14 +1,15 @@
 /*********************************************************************************
-*  WEB422 – Assignment 4
+*  WEB422 – Assignment 5
 *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: Angelo Ivan Mejia Student ID: 115777211 Date: 11/03/23
-*  GitHub Repo: https://github.com/CoyAri/web422-a4
+*  Name: Angelo Ivan Mejia Student ID: 115777211 Date: 11/07/23
+*  GitHub Repo: https://github.com/CoyAri/web422-a5
 *  Netlify Link: https://helpful-beijinho-20cd88.netlify.app/
 *
 ********************************************************************************/ 
+
 
 
 import { useRouter } from "next/router"
@@ -17,6 +18,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Pagination } from "react-bootstrap";
 import ArtworkCard from "@/components/ArtworkCard";
 import useSWR from "swr";
+import validObjectIDList from '@/public/data/validObjectIDList.json'
 
 const PER_PAGE = 12
 
@@ -27,7 +29,7 @@ export default function ArtWork() {
     let [page, setPage] = useState(1)
 
     const previousPage = () => {
-        page > !1 && setPage(page - 1)
+        page > 1 && setPage(page - 1)
     }
 
     const nextPage = () => {
@@ -40,9 +42,12 @@ export default function ArtWork() {
         console.log("Data: " + data)
         if (data) {
             let results = []
-            for (let i = 0; i < data?.objectIDs?.length; i += PER_PAGE) {
-                const chunk = data?.objectIDs.slice(i, i + PER_PAGE)
-                results.push(chunk)
+            let filteredResults = validObjectIDList.objectIDs.filter((objectID) =>
+                data.objectIDs?.includes(objectID)
+            );
+            for (let i = 0; i < filteredResults.length; i += PER_PAGE) {
+                const chunk = filteredResults.slice(i, i + PER_PAGE);
+                results.push(chunk);
             }
             setArtworkList(results)
             console.log(artworkList)
@@ -75,14 +80,14 @@ export default function ArtWork() {
                         </Card>
                     }
                 </Row>
-                <br/>
-                {artworkList.length > 0 && 
+                <br />
+                {artworkList.length > 0 &&
                     <Row>
                         <Col className="d-flex justify-content-center">
                             <Pagination>
-                                <Pagination.Prev onClick={previousPage}/>
+                                <Pagination.Prev onClick={previousPage} />
                                 <Pagination.Item>{page}</Pagination.Item>
-                                <Pagination.Next onClick={nextPage}/>
+                                <Pagination.Next onClick={nextPage} />
                             </Pagination>
                         </Col>
                     </Row>
