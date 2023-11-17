@@ -6,7 +6,7 @@
 * 
 *  Name: Angelo Ivan Mejia Student ID: 115777211 Date: 11/07/23
 *  GitHub Repo: https://github.com/CoyAri/web422-a5
-*  Netlify Link: https://helpful-beijinho-20cd88.netlify.app/
+*  Netlify Link: https://golden-malasada-0cd899.netlify.app/
 *
 ********************************************************************************/ 
 
