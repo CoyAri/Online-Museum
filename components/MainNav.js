@@ -10,11 +10,11 @@ import { addToHistory } from '@/lib/userData';
 export default function MainNav() {
 
   const router = useRouter();
+  let token = readToken()
+  
   const [artTitle, setArtTitle] = useState('');
   const [isExpanded, setIsExpanded] = useState(false)
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom)
-
-  let token = readToken()
 
   const handleSubmit = async (e) => {
     e.preventDefault();

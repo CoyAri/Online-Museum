@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useSWR from "swr"
 import Error from "next/error"
 import { Card, Button } from "react-bootstrap"

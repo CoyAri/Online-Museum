@@ -5,16 +5,16 @@ import { Card, Form, Button, Alert } from "react-bootstrap";
 
 
 export default function Register(props) {
+    
+    const router = useRouter()
+
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
     const [warning, setWarning] = useState('')
 
-    const router = useRouter()
-
     async function handleSubmit(e) {
         e.preventDefault()
-
         try {
             await registerUser(user, password, password2)
             router.push('/login')

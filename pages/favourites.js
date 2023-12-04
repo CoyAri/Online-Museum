@@ -1,7 +1,6 @@
 import { favouritesAtom } from "@/store";
 import { useAtom } from "jotai";
-import React, { useEffect, useState } from "react";
-import { Row, Col, Container, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import ArtworkCard from "@/components/ArtworkCard";
 
 export default function Favourites() {
